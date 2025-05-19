@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Animation des cartes fonctionnalités au scroll
+    // Animation au scroll
     const featureCards = document.querySelectorAll('.feature-card');
     
     const featureObserver = new IntersectionObserver((entries) => {
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     installObserver.observe(installSection);
     
-    // Script pour le carrousel
+    // Carrousel
     const carouselInner = document.querySelector('.carousel-inner');
     const items = document.querySelectorAll('.carousel-item');
     const prevBtn = document.querySelector('.carousel-prev');
@@ -87,41 +87,51 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Effet de téléchargement
     const downloadBtn = document.getElementById('download-btn');
-    
-    downloadBtn.addEventListener('click', (e) => {
+
+    downloadBtn.addEventListener('click', function(e) {
         e.preventDefault();
-        downloadBtn.textContent = 'Téléchargement...';
+        const originalText = this.textContent;
+        
+        this.textContent = 'Téléchargement...';
         
         setTimeout(() => {
-            downloadBtn.textContent = 'Téléchargé !';
+            const link = document.createElement('a');
+            link.href = 'Extension_PiP.zip';
+            link.download = 'Extension_PiP.zip';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            this.textContent = 'Téléchargé !';
             setTimeout(() => {
-                downloadBtn.textContent = 'Télécharger l\'extension';
+                this.textContent = originalText;
             }, 2000);
-        }, 1000);
+            
+        }, 250);
     });
     
     // Animation des icônes flottantes
-        function createFloatingIcons() {
-            const icons = ['🎥', '📱', '🎞️', '💻', '🌐'];
-            const header = document.querySelector('header');
+    function createFloatingIcons() {
+        const icons = ['🎥', '📱', '🎞️', '💻', '🌐'];
+        const header = document.querySelector('header');
 
-            const launchWave = () => {
-                const iconCount = Math.floor(Math.random() * 3) + 2;
-                
-                for(let i = 0; i < iconCount; i++) {
-                    const icon = document.createElement('div');
-                    icon.className = 'floating-icon';
-                    icon.style.left = `${Math.random() * 90 + 5}%`;
-                    icon.style.top = `${Math.random() * 40 + 60}%`;
-                    icon.textContent = icons[Math.floor(Math.random() * icons.length)];
-                    icon.style.fontSize = `${Math.random() * 1.5 + 1.2}rem`;
-                    icon.style.animationDuration = `${Math.random() * 1 + 1.5}s`;
-                    header.appendChild(icon);
-                    setTimeout(() => icon.remove(), 2500);
-                }
-                setTimeout(launchWave, Math.random() * 1000 + 1000);
+        const launchWave = () => {
+            const iconCount = Math.floor(Math.random() * 3) + 2;
+            
+            for(let i = 0; i < iconCount; i++) {
+                const icon = document.createElement('div');
+                icon.className = 'floating-icon';
+                icon.style.left = `${Math.random() * 90 + 5}%`;
+                icon.style.top = `${Math.random() * 40 + 60}%`;
+                icon.textContent = icons[Math.floor(Math.random() * icons.length)];
+                icon.style.fontSize = `${Math.random() * 1.5 + 1.2}rem`;
+                icon.style.animationDuration = `${Math.random() * 1 + 1.5}s`;
+                header.appendChild(icon);
+                setTimeout(() => icon.remove(), 2500);
             }
-            launchWave();
+            setTimeout(launchWave, Math.random() * 1000 + 1000);
         }
-        createFloatingIcons();
+        launchWave();
+    }
+    createFloatingIcons();
 });

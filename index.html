@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <title>YouTube PiP & QR - Extension Chrome</title>
     <link rel="shortcut icon" href="Assets/icon128.png">
@@ -10,7 +11,6 @@
 <body>
     <header>
         <div class="floating-icons">
-            <!-- Icônes flottantes animées -->
             <div class="floating-icon" style="top: 10%; left: 5%; font-size: 2rem;">🎥</div>
             <div class="floating-icon" style="top: 20%; left: 80%; font-size: 3rem;">📱</div>
             <div class="floating-icon" style="top: 70%; left: 15%; font-size: 2.5rem;">🎞️</div>
@@ -97,21 +97,52 @@
         <section id="install" class="install-steps">
             <h2>Comment installer l'extension</h2>
             <ol>
-                <li>Téléchargez le fichier .zip depuis notre site</li>
+                <li>Téléchargez le fichier .zip depuis le site</li>
                 <li>Décompressez le fichier dans un dossier</li>
                 <li>Ouvrez Chrome et allez sur chrome://extensions/</li>
                 <li>Activez le "Mode développeur"</li>
                 <li>Cliquez sur "Charger l'extension non empaquetée"</li>
                 <li>Sélectionnez le dossier où vous avez décompressé l'extension</li>
             </ol>
-            <a href="Extension_PiP.zip" class="btn-download" download="Extension_PiP.zip" id="download-btn">Télécharger l'extension</a>
+            <a href="Extension_PiP.zip" class="btn-download" download id="download-btn">Télécharger l'extension</a>
         </section>
     </div>
 
-    <footer>
+    <!-- Dans le fichier index.html -->
+<footer>
+    <div class="footer-content">
+        <div class="footer-section">
+            <h4>Contact</h4>
+            <ul class="contact-list">
+                <li><a href="mailto:pinodamien@gmail.com">📧 pinodamien@gmail.com</a></li>
+                <li><a href="tel:+33123456789">📞 +33 7 83 67 88 72</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-section">
+            <h4>Réseaux sociaux</h4>
+            <div class="social-links">
+                <a href="https://github.com/Damien-Codes" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/damien-pino-200280195/" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.youtube.com/channel/UCRriKu70_rp8ZD5QijMd2ag" target="_blank" class="social-icon"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+        
+        <div class="footer-section">
+            <h4>Légal</h4>
+            <ul>
+                <li><a href="Assets/MentionsLegal/mention.html">Mentions légales</a></li>
+                <li><a href="Assets/Politique/politique-confidentialite.html">Politique de confidentialité</a></li>
+                <li><a href="Assets/Condition/condition.html">Conditions d'utilisation</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
         <p>© 2025 YouTube PiP & QR Extension. Tous droits réservés.</p>
         <p><small>Non affilié à YouTube ou Google</small></p>
-    </footer>
+    </div>
+</footer>
     <script src="script.js"></script>
 </body>
 </html>
