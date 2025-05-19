@@ -21,7 +21,7 @@ body {
     overflow-x: hidden;
 }
 
-/* ========= HEADERS ========= */
+/* Headers */
 header {
     background: linear-gradient(135deg, var(--primary), #CC0000);
     padding: 3rem 1rem;
@@ -41,14 +41,14 @@ header {
     animation: fadeInDown 0.6s cubic-bezier(0.23, 1, 0.32, 1) both;
 }
 
-/* ========= CONTENU PRINCIPAL ========= */
+/* Contenu principal */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
 }
 
-/* ========= MENTIONS LÉGALES ========= */
+/* Sections légales */
 .legal-section {
     padding: 3rem 0;
     animation: fadeInDown 0.8s 0.3s both;
@@ -115,7 +115,14 @@ header {
     border-bottom-style: solid;
 }
 
-/* ========= FOOTER ========= */
+.update-date {
+    color: #888;
+    font-size: 0.9rem;
+    margin-top: 2rem;
+    text-align: right;
+}
+
+/* Footer */
 footer {
     background: var(--dark-gray);
     padding: 3rem 1rem 1rem;
@@ -143,33 +150,12 @@ footer {
     font-size: 1.2rem;
 }
 
-.contact-list {
+.footer-section ul {
     list-style: none;
     padding: 0;
-    margin: 0 auto;
-    text-align: center;
 }
 
-.contact-list li {
-    margin-bottom: 1rem;
-    line-height: 1.6;
-}
-
-.social-links {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    font-size: 1.8rem;
-    margin-top: 1rem;
-}
-
-.legal-links {
-    list-style: none;
-    padding: 0;
-    display: block;
-}
-
-.legal-links li {
+.footer-section li {
     margin-bottom: 0.8rem;
 }
 
@@ -182,33 +168,12 @@ footer {
 .footer-section a:hover {
     color: var(--primary);
 }
-.footer-section ul {
-    list-style: none !important;
-    padding-left: 0 !important;
-}
 
-.footer-section li {
-    list-style-type: none !important;
-}
-
-.contact-list,
-.legal-links {
-    list-style: none;
-    padding-left: 0;
-}
-.footer-section ul {
-    list-style: none !important;
-    padding-left: 0 !important;
-}
-
-.footer-section li {
-    list-style-type: none !important;
-}
-
-.contact-list,
-.legal-links {
-    list-style: none;
-    padding-left: 0;
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    font-size: 1.8rem;
 }
 
 .footer-bottom {
@@ -218,7 +183,7 @@ footer {
     border-top: 1px solid var(--gray);
 }
 
-/* ========= ANIMATIONS ========= */
+/* Animations */
 @keyframes fadeInDown {
     from {
         opacity: 0;
@@ -230,18 +195,7 @@ footer {
     }
 }
 
-@keyframes scaleUp {
-    from {
-        transform: scale(0.98);
-        opacity: 0;
-    }
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
-/* ========= RESPONSIVE ========= */
+/* Responsive */
 @media (max-width: 768px) {
     .header-content h1 {
         font-size: 2rem;
