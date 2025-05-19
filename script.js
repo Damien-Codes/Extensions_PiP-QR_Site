@@ -100,24 +100,28 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 1000);
     });
     
-    // Ajout d'icônes flottantes supplémentaires
-    function createFloatingIcons() {
-        const icons = ['🎥', '📱', '🔴', '⚡', '👆', '✨'];
-        const header = document.querySelector('header');
-        
-        for (let i = 0; i < 5; i++) {
-            const icon = document.createElement('div');
-            icon.className = 'floating-icon';
-            icon.textContent = icons[Math.floor(Math.random() * icons.length)];
-            icon.style.left = `${Math.random() * 100}%`;
-            icon.style.top = `${Math.random() * 100}%`;
-            icon.style.fontSize = `${Math.random() * 2 + 1.5}rem`;
-            icon.style.animationDuration = `${Math.random() * 10 + 10}s`;
-            icon.style.animationDelay = `${Math.random() * 5}s`;
-            
-            header.appendChild(icon);
+    // Animation des icônes flottantes
+        function createFloatingIcons() {
+            const icons = ['🎥', '📱', '🎞️', '💻', '🌐'];
+            const header = document.querySelector('header');
+
+            const launchWave = () => {
+                const iconCount = Math.floor(Math.random() * 3) + 2;
+                
+                for(let i = 0; i < iconCount; i++) {
+                    const icon = document.createElement('div');
+                    icon.className = 'floating-icon';
+                    icon.style.left = `${Math.random() * 90 + 5}%`;
+                    icon.style.top = `${Math.random() * 40 + 60}%`;
+                    icon.textContent = icons[Math.floor(Math.random() * icons.length)];
+                    icon.style.fontSize = `${Math.random() * 1.5 + 1.2}rem`;
+                    icon.style.animationDuration = `${Math.random() * 1 + 1.5}s`;
+                    header.appendChild(icon);
+                    setTimeout(() => icon.remove(), 2500);
+                }
+                setTimeout(launchWave, Math.random() * 1000 + 1000);
+            }
+            launchWave();
         }
-    }
-    
-    createFloatingIcons();
+        createFloatingIcons();
 });
