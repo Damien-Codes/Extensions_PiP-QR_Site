@@ -439,13 +439,6 @@ footer {
     padding-left: 0;
 }
 
-.footer-bottom {
-    text-align: center;
-    padding-top: 3rem;
-    margin-top: 3rem;
-    border-top: 1px solid var(--gray);
-}
-
 /* Mobile */
 @media (max-width: 768px) {
     .footer-content {
